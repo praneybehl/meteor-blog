@@ -8,6 +8,10 @@ Router.map(function(){
       return [Meteor.subscribe('posts')];
     }
   });
+  this.route('postNew',{
+    path: '/blog/new',
+    template: 'postForm'
+  });
   this.route('postShow',{
     path: '/blog/:_id',
     onBeforeAction: function(){
@@ -16,9 +20,6 @@ Router.map(function(){
     waitOn: function(){
       return [Meteor.subscribe('posts')];
     }
-  });
-  this.route('postForm',{
-    path: '/blog/new'
   });
   this.route('postIndex',{
     path: '/blog',

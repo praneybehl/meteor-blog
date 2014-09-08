@@ -22,6 +22,7 @@ AutoForm.hooks({
   postForm: {
     before: {
       insert: function(doc, template) {
+        console.log( "Before Insert new post" );
         return doc;
       },
       update: function(docId, modifier, template) {
@@ -30,15 +31,15 @@ AutoForm.hooks({
     },
     after: {
       insert: function(error, result, template) {
-        if( error !== undefined ){
-          Router.go('/blog');
+        if( error === undefined ){
+          Router.go('/blog/'+result+'/edit');
         }else{
           console.log(error );
         }
       },
       update: function(error, result, template) {
-        if( error !== undefined ){
-          Router.go('/blog');
+        if( error === undefined ){
+          console.log("Update successful");
         }else{
           console.log(error );
         }
