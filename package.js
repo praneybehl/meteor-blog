@@ -41,8 +41,6 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
   api.use('tinytest');
   api.addFiles('lib.js');
-  api.addFiles('index.js');
-  api.addFiles('index.html');
   api.use('aldeed:simple-schema');
   api.use('aldeed:collection2');
 });
