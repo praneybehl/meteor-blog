@@ -1,0 +1,8 @@
+<template name="postIndex">
+  {{#each posts}} 
+    <div class="row">
+      <a href="/blog/{{_id}}">{{title}}</a><br>
+      {{brief}}
+    </div>
+  {{/each}} 
+</template>

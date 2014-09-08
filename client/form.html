@@ -1,0 +1,10 @@
+<template name="postForm">
+  {{# autoForm collection="Posts" id="postForm" doc=editDoc type=mode}}
+    <fieldset>
+      {{> afQuickField name='title'}}
+      {{> afQuickField id='postBody' name='body' type='textarea'}}
+      {{> afQuickField name='published'}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">{{mode}}</button>
+  {{/autoForm}}
+</template>

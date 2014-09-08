@@ -5,12 +5,34 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
+  api.use([
+    'templating'
+    ],'client');
+  api.use([
+    'aldeed:simple-schema',
+    'aldeed:collection2',
+    'aldeed:autoform',
+    'iron:router',
+    'iron:layout'
+    ], ['client', 'server']); 
+  
   api.versionsFrom('METEOR@0.9.1');
-  api.addFiles('lib.js');
-  api.addFiles('index.js');
-  api.addFiles('index.html');
-  api.use('aldeed:simple-schema');
-  api.use('aldeed:collection2');
+  
+  api.addFiles([
+    'lib.js',
+    'client/routes.js'
+  ]);
+  api.addFiles([
+    'client/form.html',
+    'client/form.js',
+    'client/show.html',
+    'client/show.js',
+    'client/index.html',
+    'client/index.js',
+    'client/routes.js'
+    ], 'client' );
+
+  api.export('Posts');
 });
 
 Package.onTest(function(api) {

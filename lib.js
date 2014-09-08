@@ -2,14 +2,19 @@ PostSchema = new SimpleSchema({
   title: {
     type: String
   },
+  brief: {
+    type: String
+  },
   body: {
     type: String
   },
   published: {
-    type: Boolean
+    type: Boolean,
+    defaultValue: false
   },
-  createdAt: {
-    type: Date
+  publishedAt: {
+    type: Date,
+    optional: true
   }
 });
 
@@ -17,20 +22,16 @@ Posts = new Meteor.Collection('posts',{
   schema: PostSchema
 });
 
-Meteor.startup(function(){
-  if( BlogSettings.allowed !== undefined ){
-    Posts.allow( BlogSettings.allowed );
-  }else{ 
-    Posts.allow({
-      insert: function(userId, doc){
-        return userId !== undefined;
-      },
-      update: function(userId, doc, fieldNames, modifier){
-        return userId !== undefined;
-      },
-      remove: function(userId, doc){
-        return userId !== undefined;
-      }
-    });
+Posts.allow({
+  insert: function(userId, doc){
+    return true;
+  },
+  update: function(userId, doc, fieldNames, modifier){
+    return true;
+  },
+  remove: function(userId, doc){
+    return true;
   }
 });
+
+BlogSettings = {};
