@@ -5,7 +5,7 @@ Router.map(function(){
       Session.set('editPostId',this.params._id);
     },
     waitOn: function(){
-      return [Meteor.subscribe('posts')];
+      return [Meteor.subscribe('Posts')];
     }
   });
   this.route('postNew',{
@@ -18,13 +18,13 @@ Router.map(function(){
       Session.set('postId',this.params._id);
     },
     waitOn: function(){
-      return [Meteor.subscribe('posts')];
+      return [Meteor.subscribe('Posts')];
     }
   });
   this.route('postIndex',{
     path: '/' + BlogSettings.route,
     waitOn: function(){
-      return [Meteor.subscribe('posts')];
+      return [Meteor.subscribe('Posts')];
     }
   });
 });

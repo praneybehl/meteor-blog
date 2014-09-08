@@ -31,6 +31,9 @@ Package.onUse(function(api) {
     'client/index.js',
     'client/routes.js'
     ], 'client' );
+  api.addFiles([
+    'server/server.js',
+    ], 'server' );
 
   api.export('Posts');
   api.export('BlogSettings');

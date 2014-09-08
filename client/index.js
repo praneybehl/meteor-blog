@@ -3,5 +3,9 @@ Template.postIndex.posts = function(){
 }
 
 Template.postIndex.blogAdmin = function(){
-  return BlogSettings.blogAdmin( Meteor.userId() );
+  if( Meteor.userId !== undefined && Meteor.userId() !== undefined ){
+    return BlogSettings.blogAdmin( Meteor.userId() );
+  }else{
+    return false;
+  }
 }

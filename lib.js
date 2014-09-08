@@ -23,7 +23,7 @@ PostSchema = new SimpleSchema({
   }
 });
 
-Posts = new Meteor.Collection('posts',{
+Posts = new Meteor.Collection('Posts',{
   schema: PostSchema
 });
 
