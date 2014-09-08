@@ -1,6 +1,6 @@
 Router.map(function(){
   this.route('postForm',{
-    path: '/blog/:_id/edit',
+    path: '/' + BlogSettings.route + '/:_id/edit',
     onBeforeAction: function(){
       Session.set('editPostId',this.params._id);
     },
@@ -9,11 +9,11 @@ Router.map(function(){
     }
   });
   this.route('postNew',{
-    path: '/blog/new',
+    path: '/' + BlogSettings.route + '/new',
     template: 'postForm'
   });
   this.route('postShow',{
-    path: '/blog/:_id',
+    path: '/' + BlogSettings.route + '/:_id',
     onBeforeAction: function(){
       Session.set('postId',this.params._id);
     },
@@ -22,7 +22,7 @@ Router.map(function(){
     }
   });
   this.route('postIndex',{
-    path: '/blog',
+    path: '/' + BlogSettings.route,
     waitOn: function(){
       return [Meteor.subscribe('posts')];
     }

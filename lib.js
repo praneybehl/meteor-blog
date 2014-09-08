@@ -1,3 +1,8 @@
+BlogSettings = {
+  "route": "blog",
+  "blogAdmin": function(userId){ return false; }
+};
+
 PostSchema = new SimpleSchema({
   title: {
     type: String
@@ -24,14 +29,12 @@ Posts = new Meteor.Collection('posts',{
 
 Posts.allow({
   insert: function(userId, doc){
-    return true;
+    return BlogSettings.blogAdmin(userId);
   },
   update: function(userId, doc, fieldNames, modifier){
-    return true;
+    return BlogSettings.blogAdmin(userId);
   },
   remove: function(userId, doc){
-    return true;
+    return BlogSettings.blogAdmin(userId);
   }
 });
-
-BlogSettings = {};

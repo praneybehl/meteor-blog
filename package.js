@@ -33,6 +33,7 @@ Package.onUse(function(api) {
     ], 'client' );
 
   api.export('Posts');
+  api.export('BlogSettings');
 });
 
 Package.onTest(function(api) {

@@ -1,3 +1,9 @@
 Meteor.publish('posts', function(){
-  return Meteor.find({published: true});
+  console.log( "HERE" );
+  console.log( this.userId );
+  if( BlogSettings.blogAdmin( this.userId ) ){
+    return Posts.find({});
+  }else{
+    return Posts.find({published: true});
+  }
 });

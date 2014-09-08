@@ -4,7 +4,9 @@
       {{> postLineItem this}}
     </div>
   {{/each}}
-  <a id="newPostBtn" class='btn btn-default' href="{{pathFor 'postNew'}}">New Post</a>
+  {{#if blogAdmin}}
+    <a id="newPostBtn" class='btn btn-default' href="{{pathFor 'postNew'}}">New Post</a>
+  {{/if}}
 </template>
 
 <template name="postLineItem">
