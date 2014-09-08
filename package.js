@@ -9,11 +9,10 @@ Package.onUse(function(api) {
     'templating'
     ],'client');
   api.use([
-    'aldeed:simple-schema',
-    'aldeed:collection2',
-    'aldeed:autoform',
-    'iron:router',
-    'iron:layout'
+    'aldeed:simple-schema@0.7.0',
+    'aldeed:collection2@0.4.6',
+    'aldeed:autoform@0.17.1',
+    'iron:router@0.9.3'
     ], ['client', 'server']); 
   
   api.versionsFrom('METEOR@0.9.1');
