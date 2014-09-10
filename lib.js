@@ -17,6 +17,9 @@ PostSchema = new SimpleSchema({
     type: Boolean,
     defaultValue: false
   },
+  authorId: {
+    type: String
+  },
   publishedAt: {
     type: Date,
     optional: true

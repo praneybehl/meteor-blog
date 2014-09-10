@@ -23,6 +23,7 @@ AutoForm.hooks({
     before: {
       insert: function(doc, template) {
         console.log( "Before Insert new post" );
+        doc.authorId = Meteor.userId();
         return doc;
       },
       update: function(docId, modifier, template) {
