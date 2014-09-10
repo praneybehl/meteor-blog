@@ -1,7 +1,11 @@
-<template name="postIndex">
+<template name="postIndexWrapper">
+  {{>postLineItemDefault}}
+</template>
+
+<template name="postIndexDefault">
   {{#each posts}}
     <div class="row">
-      {{> postLineItem this}}
+      {{> postLineItemDefault this}}
     </div>
   {{/each}}
   {{#if blogAdmin}}
@@ -9,7 +13,7 @@
   {{/if}}
 </template>
 
-<template name="postLineItem">
+<template name="postLineItemDefault">
   <div class="postLineItem">
     <h2><a href="/blog/{{_id}}">{{title}}</a></h2><br>
     {{brief}}

@@ -23,6 +23,7 @@ Router.map(function(){
   });
   this.route('postIndex',{
     path: '/' + BlogSettings.route,
+    template: 'postIndexWrapper'
     waitOn: function(){
       return [Meteor.subscribe('Posts')];
     }

@@ -1,5 +1,7 @@
 BlogSettings = {
   "route": "blog",
+  "postIndexTemplate": "postsIndexDefault",
+  "postLineItemTemplate": "postsLineItemDefault",
   "blogAdmin": function(userId){ return false; }
 };
 
