@@ -6,11 +6,17 @@ Router.map(function(){
     },
     waitOn: function(){
       return [Meteor.subscribe('Posts')];
+    },
+    onAfterAction: function(){
+      BlogSettings.afterEditRender ? BlogSettings.afterEditRender() : return;
     }
   });
   this.route('postNew',{
     path: '/' + BlogSettings.route + '/new',
-    template: 'postForm'
+    template: 'postForm',
+    onAfterAction: function(){
+      BlogSettings.afterNewRender ? BlogSettings.afterNewRender() : return;
+    }
   });
   this.route('postShow',{
     path: '/' + BlogSettings.route + '/:_id',
@@ -19,6 +25,9 @@ Router.map(function(){
     },
     waitOn: function(){
       return [Meteor.subscribe('Posts')];
+    },
+    onAfterAction: function(){
+      BlogSettings.afterShowRender ? BlogSettings.afterShowRender() : return;
     }
   });
   this.route('postIndex',{
@@ -26,6 +35,10 @@ Router.map(function(){
     template: 'postIndexWrapper'
     waitOn: function(){
       return [Meteor.subscribe('Posts')];
+    },
+    onAfterAction: function(){
+      BlogSettings.afterIndexRender ? BlogSettings.afterIndexRender() : return;
     }
+
   });
 });
