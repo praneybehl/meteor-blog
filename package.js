@@ -1,7 +1,7 @@
 Package.describe({
   summary: " \* Easy blog package *\ ",
-  version: "0.0.1",
-  git: " \* Fill me in! *\ "
+  version: "0.0.2-rc.1",
+  git: "https://github.com/jimmiebtlr/meteor-blog.git"
 });
 
 Package.onUse(function(api) {
