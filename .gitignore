@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 .build*
-=======
 .meteor/local
 .meteor/meteorite
->>>>>>> 196e7fe7813137ed30d9c1058dc93b30fbcc1b2f
+\.*
+0*
